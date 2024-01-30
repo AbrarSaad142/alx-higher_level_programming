@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""8-rectangle, built for Holberton Python project 0x08 task 8.
+"""9-rectangle, built for Holberton Python project 0x08 task 9.
 """
 
 
@@ -7,7 +7,8 @@ class Rectangle:
     """Class for printing or computation of dimensions of a rectangle.
 
     Takes in args for width and height of a rectangle, and contains methods
-    for calculation of the area or perimeter. __str__, __repr__, and __del__
+    for calculation of the area or perimeter, and for creating a square by
+    making a new instance of equal sides. __str__, __repr__, and __del__
     fuctionality defined below.
 
     Attributes:
@@ -158,7 +159,7 @@ class Rectangle:
         """Allows use of eval().
 
         Returns:
-            A string of the code needed to create the instance.
+            A string containing the code needed to create the instance.
 
         """
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
@@ -174,8 +175,8 @@ class Rectangle:
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        """Compares the area of two instances
-         and returns the larger of the two.
+        """Compares the area of two instances &
+        returns larger of the two.
 
         Args:
             rect_1 (Rectangle object): first instance to be compared
@@ -197,3 +198,16 @@ class Rectangle:
             return rect_1
         else:
             return rect_2
+
+    @classmethod
+    def square(cls, size=0):
+        """Returns an instance with equal sides of length `size`.
+
+        Args:
+            size (int): length of sides of square, defaults to 0.
+
+        Returns:
+            new instance of class with equal sides
+
+        """
+        return cls(size, size)

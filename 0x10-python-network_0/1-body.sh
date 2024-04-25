@@ -1,4 +1,3 @@
-#!/usr/bin/python3
-#Bash script that takes in a URL, sends a GET request to the URL,
-#and displays the body of the response
+#!/bin/bash
+#Script that displays the body of the response
 curl -sL "$1"
